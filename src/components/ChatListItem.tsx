@@ -3,7 +3,7 @@ import {css} from "@emotion/react";
 import {RouteComponentProps, withRouter} from "react-router";
 import * as H from "history";
 
-import Button from "./button";
+import Button from "./Button";
 
 interface ChatListItemProps extends RouteComponentProps {
     // チャットルーム

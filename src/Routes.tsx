@@ -2,8 +2,8 @@ import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {css, Global} from "@emotion/react";
 
-import ChatListPage from "./pages/chat-list-page";
-import ChatRoomPage from "./pages/chat-room-page";
+import ChatListPage from "./pages/ChatListPage";
+import ChatRoomPage from "./pages/ChatRoomPage";
 
 export default function Routes() {
     return (

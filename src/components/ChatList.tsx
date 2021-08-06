@@ -1,5 +1,5 @@
 import React from "react";
-import ChatListItem from "./chat-list-item";
+import ChatListItem from "./ChatListItem";
 
 export interface ChatListData {
     roomId: string;

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {css} from "@emotion/react";
 
-import ChatList, {ChatListData} from "../components/chat-list";
-import Button from "../components/button";
-import CreateChatRoomModal from "../components/create-chat-room-modal";
+import ChatList, {ChatListData} from "../components/ChatList";
+import Button from "../components/Button";
+import CreateChatRoomModal from "../components/CreateChatRoomModal";
 
 const data: ChatListData[] = [
     {roomId: "ROOM_1", name: "チャットルーム　1", users: [],},

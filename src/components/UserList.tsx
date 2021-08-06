@@ -1,6 +1,6 @@
 import React from "react";
 
-import User from './user';
+import User from './User';
 
 export interface UserItem {
     // ユーザー名

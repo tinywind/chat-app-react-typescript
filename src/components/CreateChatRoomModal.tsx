@@ -1,8 +1,8 @@
 import React from "react";
 import {css} from "@emotion/react";
 
-import InputText from "./input-text";
-import Button from "./button";
+import InputText from "./InputText";
+import Button from "./Button";
 
 interface CreateChatRoomModalProps {
     // チャットルーム名が入力された場合のイベント
