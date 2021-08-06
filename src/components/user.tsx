@@ -1,24 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import {css} from "@emotion/react";
 
 interface UserProps {
     //   ユーザー名
     name: string;
 }
 
-class User extends React.Component<UserProps> {
-    render() {
-        return (
-            <UserStyle>
-                <div>{this.props.name}</div>
-            </UserStyle>
-        );
-    }
+export default function User(props: UserProps) {
+    return (
+        <div css={styles}>
+            <div>{props.name}</div>
+        </div>
+    );
 }
 
-const UserStyle = styled.div`
-  color: "ffffff";
-  margin: 5px 0px;
+const styles = css`
+  color: #fff;
+  margin: 5px 0;
 `;
-
-export default User;

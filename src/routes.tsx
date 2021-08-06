@@ -1,19 +1,35 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {Global} from "@emotion/react";
+import {css, Global} from "@emotion/react";
 
-import global from "./styles/global";
 import ChatListPage from "./pages/chat-list-page";
 import ChatRoomPage from "./pages/chat-room-page";
 
-const Routes: React.FC = () => (
-    <BrowserRouter>
-        <Global styles={global}/>
-        <Switch>
-            <Route exact path="/" component={ChatListPage}/>
-            <Route exact path="/room" component={ChatRoomPage}/>
-        </Switch>
-    </BrowserRouter>
-);
+export default function Routes() {
+    return (
+        <BrowserRouter>
+            <Global styles={styles}/>
+            <Switch>
+                <Route exact path="/" component={ChatListPage}/>
+                <Route exact path="/room" component={ChatRoomPage}/>
+            </Switch>
+        </BrowserRouter>
+    );
+}
 
-export default Routes;
+const styles = css`
+  html,
+  body {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    overscroll-behavior: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  *:focus {
+    outline: none;
+  }
+`;

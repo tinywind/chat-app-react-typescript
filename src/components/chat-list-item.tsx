@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import {css} from "@emotion/react";
 import {RouteComponentProps, withRouter} from "react-router";
 import * as H from "history";
 
@@ -16,28 +16,22 @@ interface ChatListItemProps extends RouteComponentProps {
     history: H.History;
 }
 
-class ChatListItem extends React.Component<ChatListItemProps> {
+export default withRouter(function ChatListItem(props: ChatListItemProps) {
     //   入室ボタンクリック時の処理
-    handlePage() {
-        // チャットルームページに遷移
-        this.props.history.push("/room?roomId=" + this.props.roomId);
-    }
+    const handlePage = () => props.history.push("/room?roomId=" + props.roomId);
 
-    render() {
-        return (
-            <ChatListItemStyle>
-                <div className="chatRoomName">{this.props.name}</div>
-                <div className="numberOfPeole">{this.props.numberOfPeople}</div>
-                <div className="button">
-                    <Button name="入室" onClick={() => this.handlePage()} primary/>
-                </div>
-                ;
-            </ChatListItemStyle>
-        );
-    }
-}
+    return (
+        <div css={styles}>
+            <div className="chatRoomName">{props.name}</div>
+            <div className="numberOfPeople">{props.numberOfPeople}</div>
+            <div className="button">
+                <Button name="入室" onClick={handlePage} primary={true}/>
+            </div>
+        </div>
+    );
+});
 
-const ChatListItemStyle = styled.div`
+const styles = css`
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -61,5 +55,3 @@ const ChatListItemStyle = styled.div`
     text-align: right;
   }
 `;
-
-export default withRouter(ChatListItem);

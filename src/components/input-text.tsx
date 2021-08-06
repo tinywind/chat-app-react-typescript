@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import {css} from "@emotion/react";
 
 interface InputTextProps {
     // テキストが入力された場合のイベント
@@ -10,29 +10,21 @@ interface InputTextProps {
     placeholder: string;
 }
 
-class InputText extends React.Component<InputTextProps> {
-    render() {
-        return (
-            <InputTextStyle>
-                <div
-                    contentEditable={true}
-                    onInput={this.props.onInput}
-                    onBlur={this.props.onBlur}
-                    className="text"
-                    data-placeholder={this.props.placeholder}
-                />
-            </InputTextStyle>
-        );
-    }
+export default function InputText(props: InputTextProps) {
+    return (
+        <div css={inputTextStyle}>
+            <div contentEditable={true} onInput={props.onInput} onBlur={props.onBlur} className="text" data-placeholder={props.placeholder}/>
+        </div>
+    );
 }
 
-const InputTextStyle = styled.div`
+const inputTextStyle = css`
   .text {
     border: 1px solid #dcdcdc;
     border-radius: 3px;
     padding: 10px;
 
-    &:forcus {
+    &:focus {
       border: 1px solid #d3d3d3;
     }
   }
@@ -42,5 +34,3 @@ const InputTextStyle = styled.div`
     color: #888;
   }
 `;
-
-export default InputText;
