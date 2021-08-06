@@ -2,22 +2,22 @@ import React from "react";
 import styled from "styled-components";
 
 interface ButtonProps {
-  // ボタン名
-  name: string;
-  // ボタンをクリックした時のイベント
-  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  // 主ボタンか副ボタンかのフラグ
-  primary?: boolean;
+    // ボタン名
+    name: string;
+    // ボタンをクリックした時のイベント
+    onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    // 主ボタンか副ボタンかのフラグ
+    primary?: boolean;
 }
 
 class Button extends React.Component<ButtonProps> {
-  render() {
-    return (
-      <ButtonStyle onClick={this.props.onClick} primary={this.props.primary}>
-        {this.props.name}
-      </ButtonStyle>
-    );
-  }
+    render() {
+        return (
+            <ButtonStyle onClick={this.props.onClick} primary={this.props.primary}>
+                {this.props.name}
+            </ButtonStyle>
+        );
+    }
 }
 
 const ButtonStyle = styled.div<{ primary?: boolean }>`
